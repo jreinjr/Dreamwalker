@@ -4,7 +4,7 @@ A Unity client for real-time AI-powered video streaming powered by Daydream Scop
 
 ## Getting Started
 
-Run Scope locally or on Runpod. On Runpod, be sure to add your HF_TOKEN to environment variables. Use the URL of your server (on Runpod, something like https://[some letters]-8000.proxy.runpod.net/). Watch the Runpod server logs while you connect from Android to monitor progress. Change the prompt, pipeline, and settings; uses your Android phone camera (either front/back).
+Run Scope locally or on Runpod. On Runpod, be sure to add your HF_TOKEN to environment variables. Use the URL of your server (on Runpod, something like https://[some letters]-8000.proxy.runpod.net/). Watch the Runpod server logs while you connect from Android to monitor progress. Change the prompt, pipeline, and settings; uses your Android phone camera (either front/back). You should be able to test first in Unity Editor & then build & run on Android.
 
 ## Features
 
@@ -18,9 +18,9 @@ Run Scope locally or on Runpod. On Runpod, be sure to add your HF_TOKEN to envir
 
 ## Requirements
 
-- Unity 2022.3 LTS or newer
+- Unity 2022.3 LTS or newer (tested in Unity 6000.0.60f1
 - [Unity WebRTC Package](https://docs.unity3d.com/Packages/com.unity.webrtc@3.0/manual/index.html) (included)
-- A running [Scope](https://github.com/your-org/scope) backend server
+- A running [Scope](daydream.live) backend server
 
 ## Project Structure
 
@@ -46,14 +46,6 @@ Assets/
     ├── Mobile_RPAsset.asset       # URP settings for mobile
     └── PC_RPAsset.asset           # URP settings for PC
 ```
-
-## Getting Started
-
-1. Open the project in Unity
-2. Open `Assets/Scenes/SampleScene.unity`
-3. Ensure your Scope backend server is running
-4. Enter the server URL in the connection menu
-5. Press Connect to start streaming
 
 ## Configuration
 
@@ -90,7 +82,3 @@ Assets/
    UI Controls                       Video Encoding
    Video Display                     Pipeline Management
 ```
-
-## License
-
-Proprietary - All rights reserved
