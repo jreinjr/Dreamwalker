@@ -1,6 +1,10 @@
 # Dreamwalker
 
-A Unity client for real-time AI-powered video streaming. Dreamwalker captures camera input, streams it to a Scope backend server for AI processing (image-to-image diffusion), and displays the processed video in real-time.
+A Unity client for real-time AI-powered video streaming powered by Daydream Scope. Dreamwalker captures camera input, streams it to a Scope backend server for AI processing (image-to-image diffusion), and displays the processed video in real-time.
+
+## Getting Started
+
+Run Scope locally or on Runpod. On Runpod, be sure to add your HF_TOKEN to environment variables. Use the URL of your server (on Runpod, something like https://[some letters]-8000.proxy.runpod.net/). Watch the Runpod server logs while you connect from Android to monitor progress. Change the prompt, pipeline, and settings; uses your Android phone camera (either front/back).
 
 ## Features
 
