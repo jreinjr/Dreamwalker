@@ -1,0 +1,348 @@
+/* Main UI Styles for Dreamwalker v2 */
+
+.root {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    /* Transparent background to show RawImage video behind */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Camera PIP in bottom-right corner */
+.camera-pip {
+    position: absolute;
+    right: 10px;
+    bottom: 25px;
+    width: 80px;
+    height: 45px;
+    background-color: rgb(30, 30, 30);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+/* Left-anchored side menu */
+.side-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 140px;
+    height: 300px;
+    background-color: rgb(30, 30, 40);
+    border-right-width: 2px;
+    border-right-color: rgb(100, 150, 255);
+    flex-direction: column;
+    overflow: hidden;
+    display: none;
+}
+
+.side-menu.menu-open {
+    display: flex;
+}
+
+.menu-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    background-color: rgb(50, 50, 70);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(100, 150, 255);
+    flex-shrink: 0;
+}
+
+.menu-title {
+    color: rgb(255, 255, 255);
+    font-size: 9px;
+    -unity-font-style: bold;
+}
+
+.close-button {
+    width: 16px;
+    height: 16px;
+    background-color: rgba(255, 80, 80, 0.6);
+    border-width: 0;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 8px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 80, 80, 0.9);
+}
+
+.menu-content {
+    flex-grow: 1;
+    padding: 6px;
+}
+
+.menu-scrollable {
+    flex-grow: 1;
+}
+
+/* Form field styles */
+.field-label {
+    color: rgb(180, 180, 180);
+    font-size: 7px;
+    margin-bottom: 2px;
+    margin-top: 4px;
+}
+
+.placeholder-hint {
+    color: rgb(100, 100, 100);
+    font-size: 6px;
+    margin-top: -1px;
+    margin-bottom: 4px;
+}
+
+.text-input {
+    background-color: rgba(50, 50, 60, 0.8);
+    border-width: 1px;
+    border-color: rgba(100, 100, 120, 0.5);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 3px;
+    font-size: 7px;
+}
+
+.text-input:focus {
+    border-color: rgba(100, 150, 255, 0.8);
+}
+
+.multiline-input {
+    min-height: 30px;
+    white-space: normal;
+}
+
+.number-input {
+    background-color: rgba(50, 50, 60, 0.8);
+    border-width: 1px;
+    border-color: rgba(100, 100, 120, 0.5);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 2px;
+    font-size: 7px;
+    width: 40px;
+}
+
+.dropdown-field {
+    background-color: rgba(50, 50, 60, 0.8);
+    border-width: 1px;
+    border-color: rgba(100, 100, 120, 0.5);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 3px;
+    font-size: 7px;
+}
+
+.slider-field {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.slider-value {
+    color: rgb(150, 150, 150);
+    font-size: 6px;
+    -unity-text-align: middle-right;
+    margin-top: -2px;
+}
+
+/* Toggle and row styles */
+.toggle-row {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+
+.toggle-field {
+    margin-right: 4px;
+}
+
+.toggle-label {
+    color: rgb(200, 200, 200);
+    font-size: 7px;
+}
+
+.row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+/* Button styles */
+.action-button {
+    background-color: rgba(70, 130, 200, 0.8);
+    border-width: 0;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 4px 8px;
+    font-size: 7px;
+    margin-top: 4px;
+    -unity-text-align: middle-center;
+}
+
+.action-button:hover {
+    background-color: rgba(90, 150, 220, 0.9);
+}
+
+.action-button:active {
+    background-color: rgba(60, 110, 180, 0.9);
+}
+
+.small-button {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(80, 80, 100, 0.8);
+    border-width: 0;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    font-size: 7px;
+    -unity-text-align: middle-center;
+    margin-left: 2px;
+}
+
+.small-button:hover {
+    background-color: rgba(100, 100, 120, 0.9);
+}
+
+.control-button {
+    background-color: rgba(70, 130, 200, 0.8);
+    border-width: 0;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 4px 6px;
+    font-size: 7px;
+    flex-grow: 1;
+    margin-right: 2px;
+    -unity-text-align: middle-center;
+}
+
+.control-button:hover {
+    background-color: rgba(90, 150, 220, 0.9);
+}
+
+.control-button-danger {
+    background-color: rgba(200, 70, 70, 0.8);
+}
+
+.control-button-danger:hover {
+    background-color: rgba(220, 90, 90, 0.9);
+}
+
+.button-row {
+    flex-direction: row;
+    margin-top: 6px;
+}
+
+/* Separator */
+.separator {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+/* Status row */
+.status-row {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.status-value {
+    color: rgb(255, 200, 100);
+    font-size: 7px;
+    margin-left: 4px;
+}
+
+/* Top right button bar */
+.button-bar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-button {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    color: rgb(220, 220, 220);
+    padding: 3px 6px;
+    font-size: 7px;
+    margin-left: 4px;
+    -unity-text-align: middle-center;
+}
+
+.menu-button:hover {
+    background-color: rgba(60, 60, 60, 0.7);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-button:active {
+    background-color: rgba(80, 80, 80, 0.8);
+}
+
+.button-active {
+    background-color: rgba(70, 130, 200, 0.7);
+    border-color: rgba(100, 160, 230, 0.8);
+}
+
+/* Icon button style */
+.icon-button {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-width: 0;
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    margin-left: 4px;
+}
+
+.icon-button:hover {
+    background-color: rgba(60, 60, 60, 0.7);
+}
+
+.icon-button:active {
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+.camera-button {
+    font-size: 6px;
+    -unity-font-style: bold;
+}
+
+/* Status bar at bottom */
+.status-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.status-text {
+    color: rgb(200, 200, 200);
+    font-size: 7px;
+}
+
+.stats-text {
+    color: rgb(150, 200, 150);
+    font-size: 6px;
+}
