@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Unity.WebRTC;
 using Dreamwalker.Models;
+using Oculus.Interaction;
 
 namespace Dreamwalker.Networking
 {
@@ -22,7 +23,8 @@ namespace Dreamwalker.Networking
         }
 
         [Header("Dependencies")]
-        [SerializeField] private CameraCapture cameraCapture;
+        [SerializeField, Interface(typeof(ICameraCapture))] private UnityEngine.Object _cameraCapture;
+        public ICameraCapture CameraCapture { get; private set; }
 
         // Static flag to ensure WebRTC is initialized only once
         private static bool webRTCInitialized = false;
@@ -76,6 +78,7 @@ namespace Dreamwalker.Networking
 
         private void Awake()
         {
+            CameraCapture = _cameraCapture as ICameraCapture;
             // Start the WebRTC update loop - this is CRITICAL for video encoding to work!
             // In Unity WebRTC 3.0, initialization is automatic
             if (!webRTCInitialized)
@@ -334,9 +337,9 @@ namespace Dreamwalker.Networking
 
             // Step 5: Add local video track using MediaStream (matching frontend approach)
             RenderTexture videoSource = sourceTexture;
-            if (videoSource == null && cameraCapture != null)
+            if (videoSource == null && CameraCapture != null)
             {
-                videoSource = cameraCapture.CroppedTexture;
+                videoSource = CameraCapture.CroppedTexture;
             }
 
             if (videoSource != null)

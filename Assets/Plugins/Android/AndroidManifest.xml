@@ -1,39 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    xmlns:horizonos="http://schemas.horizonos/sdk"
+    android:installLocation="auto">
 
-    <!-- Camera permission for video capture -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <!-- Camera permission for video capture -->
+  <uses-permission android:name="android.permission.CAMERA" />
+  <!-- Network permissions for WebRTC -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <!-- Oculus/Meta permissions -->
+  <uses-permission android:name="com.oculus.permission.USE_ANCHOR_API" />
+  <uses-permission android:name="com.oculus.permission.USE_SCENE" />
+  <uses-permission android:name="horizonos.permission.HEADSET_CAMERA" />
 
-    <!-- Network permissions for WebRTC (v2) -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <!-- Hardware features -->
+  <uses-feature android:name="android.hardware.vr.headtracking" android:version="1" android:required="true" />
+  <uses-feature android:name="android.hardware.camera" android:required="true" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <uses-feature android:name="com.oculus.feature.PASSTHROUGH" android:required="false" />
 
-    <application android:usesCleartextTraffic="true">
-        <!--Used when Application Entry is set to Activity, otherwise remove this activity block-->
-        <activity android:name="com.unity3d.player.UnityPlayerActivity"
-                  android:theme="@style/UnityThemeSelector"
-                  android:screenOrientation="sensorLandscape"
-                  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-        </activity>
-        <!--Used when Application Entry is set to GameActivity, otherwise remove this activity block-->
-        <activity android:name="com.unity3d.player.UnityPlayerGameActivity"
-                  android:theme="@style/BaseUnityGameActivityTheme">
-            <intent-filter> 
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-            <meta-data android:name="android.app.lib_name" android:value="game" />
-        </activity>
-    </application>
+  <!-- HorizonOS SDK version -->
+  <horizonos:uses-horizonos-sdk horizonos:minSdkVersion="60" horizonos:targetSdkVersion="83" />
+
+  <application 
+      android:label="@string/app_name" 
+      android:icon="@mipmap/app_icon" 
+      android:allowBackup="false"
+      android:usesCleartextTraffic="true">
+
+    <!-- Main VR Activity (GameActivity) -->
+    <activity 
+        android:name="com.unity3d.player.UnityPlayerGameActivity"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" 
+        android:configChanges="locale|fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode|layoutDirection|density" 
+        android:launchMode="singleTask" 
+        android:excludeFromRecents="true" 
+        android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="com.oculus.intent.category.VR" />
+      </intent-filter>
+      <meta-data android:name="com.oculus.vr.focusaware" android:value="true" />
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="android.app.lib_name" android:value="game" />
+    </activity>
+
+    <!-- Application-level meta-data -->
+    <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
+    <meta-data android:name="com.oculus.ossplash.background" android:value="passthrough-contextual" />
+    <meta-data android:name="com.oculus.telemetry.project_guid" android:value="ca6cf908-f336-4763-a2f6-78a570afd206" />
+    <meta-data android:name="com.oculus.supportedDevices" android:value="quest|quest2|questpro|quest3|quest3s" tools:replace="android:value" />
+  </application>
 </manifest>

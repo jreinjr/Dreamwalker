@@ -3,12 +3,13 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Experimental.Rendering;
 using Unity.WebRTC;
+using Dreamwalker;
 
 /// <summary>
 /// Handles camera capture, permissions, and front/back camera switching.
 /// Displays the camera feed on a UI Toolkit VisualElement.
 /// </summary>
-public class CameraCapture : MonoBehaviour
+public class CameraCapture : MonoBehaviour, ICameraCapture
 {
     [Header("UI References")]
     [SerializeField] private UIDocument uiDocument;
