@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4f00853ecf78ad64f820dca5f8fccda6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 226014
+  packageName: ArchVizPRO Interior Vol.8 URP
+  packageVersion: 1.1
+  assetPath: Assets/ArchVizPRO_Interior_Vol.8_URP/3D SCRIPT/Trigger_Volume.cs
+  uploadId: 760829

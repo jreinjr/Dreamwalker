@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 676c6e2280b9bdc4dbc1d5ca2f0d2426
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: -80
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 226014
+  packageName: ArchVizPRO Interior Vol.8 URP
+  packageVersion: 1.1
+  assetPath: Assets/ArchVizPRO_Interior_Vol.8_URP/3D SCRIPT/Controller_Switch.cs
+  uploadId: 760829

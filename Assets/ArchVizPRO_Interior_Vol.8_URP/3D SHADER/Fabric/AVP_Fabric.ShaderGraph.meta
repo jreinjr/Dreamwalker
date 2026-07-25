@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2a54196c5eeb7114bb7c86a8b3ba51c5
+ScriptedImporter:
+  fileIDToRecycleName:
+    4800000: MainAsset
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 226014
+  packageName: ArchVizPRO Interior Vol.8 URP
+  packageVersion: 1.1
+  assetPath: Assets/ArchVizPRO_Interior_Vol.8_URP/3D SHADER/Fabric/AVP_Fabric.ShaderGraph
+  uploadId: 760829

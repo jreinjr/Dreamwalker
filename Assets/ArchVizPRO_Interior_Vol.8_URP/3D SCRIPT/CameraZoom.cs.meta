@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e56f506e16de2064c95ad059ef39a73f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 226014
+  packageName: ArchVizPRO Interior Vol.8 URP
+  packageVersion: 1.1
+  assetPath: Assets/ArchVizPRO_Interior_Vol.8_URP/3D SCRIPT/CameraZoom.cs
+  uploadId: 760829

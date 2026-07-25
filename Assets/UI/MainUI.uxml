@@ -1,0 +1,90 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainUI.uss?fileID=7433441132597879392&amp;guid=b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7&amp;type=3#MainUI" />
+    <ui:VisualElement name="root" class="root">
+        <!-- Video output now handled by RawImage behind this UI -->
+        <ui:VisualElement name="camera-pip" class="camera-pip" />
+        <ui:VisualElement name="server-menu" enabled="true" class="side-menu">
+            <ui:VisualElement class="menu-header">
+                <ui:Label text="SERVER" class="menu-title" />
+                <ui:Button name="btn-server-close" text="X" class="close-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-content">
+                <ui:Label text="URL:" class="field-label" />
+                <ui:TextField name="server-url" class="text-input" />
+                <ui:Label text="ip:port" class="placeholder-hint" />
+                <ui:Button name="btn-connect" text="Connect" class="action-button" />
+                <ui:VisualElement class="status-row">
+                    <ui:Label text="Status:" class="field-label" />
+                    <ui:Label name="connection-status" text="Disconnected" class="status-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="scope-menu" enabled="true" class="side-menu">
+            <ui:VisualElement class="menu-header">
+                <ui:Label text="SCOPE" class="menu-title" />
+                <ui:Button name="btn-scope-close" text="X" class="close-button" />
+            </ui:VisualElement>
+            <ui:ScrollView class="menu-content menu-scrollable">
+                <ui:Label text="Input Mode:" class="field-label" />
+                <ui:DropdownField name="input-mode-dropdown" class="dropdown-field" />
+                <ui:VisualElement class="separator" />
+                <ui:Label text="Prompt:" class="field-label" />
+                <ui:TextField name="prompt-input" multiline="true" class="text-input multiline-input" />
+                <ui:Button name="btn-send-prompt" text="Send" class="action-button" />
+                <ui:VisualElement class="separator" />
+                <ui:Label text="Pipeline:" class="field-label" />
+                <ui:DropdownField name="pipeline-dropdown" class="dropdown-field" />
+                <ui:VisualElement class="row">
+                    <ui:Label text="Seed:" class="field-label flex-1" />
+                    <ui:IntegerField name="seed-input" value="42" class="number-input" />
+                    <ui:Button name="btn-randomize-seed" text="R" tooltip="Randomize" class="small-button" />
+                </ui:VisualElement>
+                <ui:VisualElement class="separator" />
+                <ui:Label text="Denoise Steps:" class="field-label" />
+                <ui:SliderInt name="denoise-slider" low-value="1" high-value="4" value="4" class="slider-field" />
+                <ui:Label name="denoise-value" text="4 steps" class="slider-value" />
+                <ui:Label text="Noise Scale:" class="field-label" />
+                <ui:Slider name="noise-slider" low-value="0" high-value="1" value="0.8" class="slider-field" />
+                <ui:Label name="noise-value" text="0.80" class="slider-value" />
+                <ui:VisualElement class="separator" />
+                <ui:VisualElement class="toggle-row">
+                    <ui:Toggle name="noise-controller-toggle" value="true" class="toggle-field" />
+                    <ui:Label text="Noise Controller" class="toggle-label" />
+                </ui:VisualElement>
+                <ui:VisualElement class="toggle-row">
+                    <ui:Toggle name="cache-toggle" value="true" class="toggle-field" />
+                    <ui:Label text="Manage Cache" class="toggle-label" />
+                </ui:VisualElement>
+                <ui:VisualElement class="separator" />
+                <ui:Label text="LoRA:" class="field-label" />
+                <ui:DropdownField name="lora-dropdown" class="dropdown-field" />
+                <ui:Label text="LoRA Scale:" class="field-label" />
+                <ui:Slider name="lora-scale-slider" low-value="0" high-value="2" value="1" class="slider-field" />
+                <ui:Label name="lora-scale-value" text="1.00" class="slider-value" />
+                <ui:VisualElement class="separator" />
+                <ui:VisualElement class="toggle-row">
+                    <ui:Toggle name="vace-toggle" value="true" class="toggle-field" />
+                    <ui:Label text="VACE" class="toggle-label" />
+                </ui:VisualElement>
+                <ui:Label text="Context Scale:" class="field-label" />
+                <ui:Slider name="vace-scale-slider" low-value="0" high-value="2" value="1" class="slider-field" />
+                <ui:Label name="vace-scale-value" text="1.00" class="slider-value" />
+                <ui:VisualElement class="separator" />
+                <ui:VisualElement class="button-row">
+                    <ui:Button name="btn-pause" text="Pause" class="control-button" />
+                    <ui:Button name="btn-reset" text="Reset" tooltip="Reset cache" class="control-button" />
+                    <ui:Button name="btn-stop" text="Stop" class="control-button control-button-danger" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="button-bar" class="button-bar">
+            <ui:Button name="btn-server" text="Server" class="menu-button" />
+            <ui:Button name="btn-scope" text="Scope" class="menu-button" />
+            <ui:Button name="btn-camera-toggle" text="CAM" tooltip="Switch Camera" class="icon-button camera-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="status-bar" class="status-bar">
+            <ui:Label name="status-text" text="Status: Disconnected" class="status-text" />
+            <ui:Label name="stats-text" class="stats-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

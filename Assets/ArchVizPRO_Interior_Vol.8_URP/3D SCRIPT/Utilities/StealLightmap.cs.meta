@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: e9644d6fcb1eeb240b57eee03bdf63ad
+timeCreated: 1499441613
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 226014
+  packageName: ArchVizPRO Interior Vol.8 URP
+  packageVersion: 1.1
+  assetPath: Assets/ArchVizPRO_Interior_Vol.8_URP/3D SCRIPT/Utilities/StealLightmap.cs
+  uploadId: 760829
